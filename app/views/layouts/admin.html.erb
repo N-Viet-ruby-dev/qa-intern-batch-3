@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= full_title yield(:title) %></title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track": "reload" %>
+    <%= javascript_include_tag "application", "data-turbolinks-track": "reload" %>
+  </head>
+
+  <body>
+    <div class="page-wrapper chiller-theme toggled">
+      <a id="show-sidebar" class="btn btn-sm btn-dark" href="#">
+        <i class="fa fa-bars"></i>
+      </a>
+      <nav id="sidebar" class="sidebar-wrapper">
+        <div class="sidebar-content">
+          <div class="sidebar-brand">
+            <%= link_to "Admin Tool", root_path %>
+            <div id="close-sidebar">
+              <i class="fa fa-times"></i>
+            </div>
+          </div>
+          <%= render "layouts/admin/sidebar_header" %>
+          <%= render "layouts/admin/search" %>
+          <%= render "layouts/admin/sidebar_menu" %>
+        </div>
+        <%= render "layouts/admin/sidebar_footer" %>
+      </nav>
+      <main class="page-content">
+        <div class="container-fluid">
+          <%= render "layouts/admin/flash_messages" %>
+          <%= yield %>
+        </div>
+      </main>
+    </div>
+  </body>
+</html>

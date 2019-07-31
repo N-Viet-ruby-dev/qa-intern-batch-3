@@ -1,0 +1,21 @@
+en:
+  admin:
+    categories:
+      index:
+        new_category: "New Category"
+        name: "Name"
+        description: "Description"
+        action: "Action"
+        title: "Categories"
+      category:
+        sure: Are You Sure?
+      form:
+        name: "Name"
+        description: "Description"
+        submit: "Save Changes"
+      new:
+        add: "Add Categories"
+        title: "Add Category"
+      edit:
+        add: "Edit Category"
+        title: "Edit Category"

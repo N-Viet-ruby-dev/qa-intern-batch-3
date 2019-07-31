@@ -1,0 +1,12 @@
+en:
+  admin:
+    categories:
+      create:
+        success: "Create category successfully!"
+        danger: "Create category has problem!"
+      edit:
+        success: "Update category successfully!"
+        danger: "Update category has problem!"
+      destroy:
+        success: "Delete category successfully!"
+        danger: "Delete category has problem!"

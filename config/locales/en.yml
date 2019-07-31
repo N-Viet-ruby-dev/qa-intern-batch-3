@@ -1,2 +1,5 @@
 en:
   hello: "Hello world"
+  layouts:
+    admin:
+      base_title: "Demo Q&A"

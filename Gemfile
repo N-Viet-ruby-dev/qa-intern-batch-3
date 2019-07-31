@@ -18,6 +18,7 @@ gem "config"
 gem "turbolinks", "~> 5"
 gem "bcrypt"
 gem "mini_magick", "~> 4.8"
+gem "i18n", "~> 1.6"
 # gem 'capistrano-rails', group: :development
 gem "bootsnap", ">= 1.1.0", require: false
 
