@@ -1,5 +1,5 @@
 class Category < ApplicationRecord
-  has_many :posts, dependent: :destroy
+  has_many :posts, dependent: :delete_all
 
   validates :name, presence: true, uniqueness: {case_sensitive: false}
   validates :description, presence: true

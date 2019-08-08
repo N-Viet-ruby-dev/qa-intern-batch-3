@@ -30,4 +30,12 @@ module ApplicationHelper
   def valid_admin user
     current_user&.admin? && !current_user?(user)
   end
+
+  def link_to_set_post post
+    if post.actived?
+      link_to("Hide", admin_post_path(post), remote: true, method: :patch, class: "btn btn-secondary btn-sm", id: "btn-post-#{post.id}")
+    else
+      link_to("Approve", admin_post_path(post), remote: true, method: :patch, class: "btn btn-primary btn-sm", id: "btn-post-#{post.id}")
+    end
+  end
 end

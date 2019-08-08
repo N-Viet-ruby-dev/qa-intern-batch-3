@@ -17,3 +17,4 @@ User.create!(user_name: "admin",
                activated: true,
                activated_at: Time.zone.now)
 end
+

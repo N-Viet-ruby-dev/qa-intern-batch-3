@@ -1,0 +1,7 @@
+$('#btn-post-<%= @post.id %>').replaceWith('<%= j link_to_set_post(@post) %>');
+$('#active-post<%= @post.id %>').text('<%= @post.actived %>');
+<% if flash[:success] %>
+  toastr.success("<%= flash[:success] %>");
+<% else %>
+  toastr.error("<%= flash[:danger] %>");
+<% end %>

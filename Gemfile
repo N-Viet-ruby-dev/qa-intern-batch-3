@@ -17,7 +17,7 @@ gem "figaro"
 gem "jquery-rails"
 gem "jquery-ui-rails"
 gem "sass-rails", "~> 5.0"
-gem 'bootstrap', '~> 4.1.1'
+gem "bootstrap", "~> 4.1.1"
 gem "font-awesome-rails"
 gem "coffee-rails", "~> 4.2"
 gem "config"
@@ -26,6 +26,8 @@ gem "bcrypt"
 gem "mini_magick"
 gem "bootsnap", ">= 1.1.0", require: false
 gem "toastr-rails"
+gem "ckeditor", "~> 4.2", ">= 4.2.4"
+gem "paperclip"
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
