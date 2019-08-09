@@ -44,7 +44,27 @@ $(document).ready(function(){
     var isNew = $(this).find('[data-select2-tag="true"]');
     if(isNew.length && $.inArray(isNew.val(), $(this).val()) !== -1){
       isNew.replaceWith('<option selected value="' + isNew.val() + '">' + isNew.val() + '</option>');
-      $('#console').append('<code>New tag: {"' + isNew.val() + '":"' + isNew.val() + '"}</code><br>');
-    }
+    $('#console').append('<code>New tag: {"' + isNew.val() + '":"' + isNew.val() + '"}</code><br>');
+  }});
+
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable tbody tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+    showCount();
   });
-})
+});
+function showCount() {
+  var table, totalRow
+  table = $("#myTable");
+  totalRow = table.find("tbody tr:visible").length;
+  if (totalRow == 0){
+    $('#show-length').text(totalRow.toString() + " Users");
+    $('#no-result').text("No results were found.");
+  }
+  else{
+    $('#show-length').text(totalRow.toString() + " Users");
+    $('#no-result').text("");
+  }
+}

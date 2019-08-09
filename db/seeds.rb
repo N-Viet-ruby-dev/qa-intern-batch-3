@@ -4,6 +4,7 @@ User.create!(user_name: "admin",
   password: "111111",
   role: 1,
   activated: true)
+
 99.times do |n|
   user_name = Faker::Name.name
   full_name = Faker::FunnyName.name_with_initial

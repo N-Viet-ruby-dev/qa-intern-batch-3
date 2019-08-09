@@ -1,17 +1,16 @@
 Rails.application.routes.draw do
-  get 'password_resets/new'
-  get 'password_resets/edit'
   root "home#index"
 
-  get "/login", to: "sessions#new"
+  get "/signup", to: "users#new"
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
 
   resources :users do
     resources :posts, on: :member
   end
-
   resources :tags
+  resources :account_activations, only: [:edit]
+  resources :password_resets, only: [:new, :create, :edit, :update]
 
   namespace :admin do
     root "dashboard#index"
@@ -19,7 +18,4 @@ Rails.application.routes.draw do
     resources :users, except: [:edit, :show]
     resources :tags
   end
-
-  resources :account_activations, only: [:edit]
-  resources :password_resets, only: [:new, :create, :edit, :update]
 end

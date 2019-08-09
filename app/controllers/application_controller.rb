@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
   include SessionsHelper
 
   rescue_from MyCustomException do
-    render :file => "#{Rails.root}/public/404", :layout => false, :status => :not_found
+    render file: "#{Rails.root}/public/404", layout: false, status: :not_found
   end
 
   private

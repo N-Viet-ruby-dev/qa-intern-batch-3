@@ -1,0 +1,10 @@
+<tr>
+  <td id="user-table">
+    <%= image_tag current_user.avatar, class: "avatar-users" if current_user.avatar.attached? %>
+    <b><%= user.user_name %></b>
+    <%= user.email %>
+  </td>
+  <td>0</td>
+  <td>0</td>
+  <td>0</td>
+</tr>
