@@ -26,6 +26,8 @@ gem "bcrypt"
 gem "mini_magick"
 gem "bootsnap", ">= 1.1.0", require: false
 gem "toastr-rails"
+gem "kaminari", "~> 1.1", ">= 1.1.1"
+gem "bootstrap4-kaminari-views"
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]

@@ -24,6 +24,12 @@ class PostsController < ApplicationController
     end
   end
 
+  def show_post_home
+    @post = Post.find_by id: params[:post_id]
+    @post.update_attribute :view, @post.view + 1
+    @comments = @post.comments.newest
+  end
+
   private
 
   def post_params

@@ -30,4 +30,27 @@ module ApplicationHelper
   def valid_admin user
     current_user&.admin? && !current_user?(user)
   end
+
+  def load_avatar object
+    object.attached? unless object.attached?.blank?
+    "login.png"
+  end
+
+  def check_current_user
+    return new_post_path(current_user) if logged_in?
+  end
+
+  def format_time time
+    time.strftime("%b %d, %Y")
+  end
+
+  def check_time_post time
+    time_diff = (Time.now - time.localtime).abs
+    time_change = time_diff/60/60
+    if time_change <= 24
+      "#{time_change.to_i}h"
+    else
+      format_time time
+    end
+  end
 end

@@ -47,4 +47,4 @@ $(document).ready(function(){
       $('#console').append('<code>New tag: {"' + isNew.val() + '":"' + isNew.val() + '"}</code><br>');
     }
   });
-})
+});

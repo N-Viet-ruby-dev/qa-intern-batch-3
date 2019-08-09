@@ -1,0 +1,8 @@
+<div class="col-sm-1 topic-avatar">
+  <%= image_tag load_avatar(comment.user_avatar), class: "image-small image-comment" %><br>
+  <%= check_time_post comment.created_at %>
+</div>
+<div class="topic-comment-rigth col-sm-11">
+  <%= raw comment.content %>
+</div>
+

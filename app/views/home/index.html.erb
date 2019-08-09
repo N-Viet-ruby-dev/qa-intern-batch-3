@@ -13,7 +13,7 @@
       <table class="table table-hover table-striped">
         <thead>
           <th>Topic</th>
-          <th>image</th>
+          <th></th>
           <th>Replies</th>
           <th>Views</th>
           <th>Activity</th>
@@ -22,6 +22,7 @@
           <%= render partial: "post", collection: @posts %>
         </tbody>
       </table>
+      <%= paginate @posts, theme: "twitter-bootstrap-4", pagination_class: "pagination-sm" %>
     </div>
   </div>
 </div>

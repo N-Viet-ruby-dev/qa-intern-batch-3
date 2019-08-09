@@ -1,0 +1,9 @@
+<div class="topic-comment">
+  <%= form_for @post.comments.build, url: comments_path do |f| %>
+    <%= f.hidden_field :post_id, value: @post.id %>
+    <%= f.text_area :content, class: "form-control editor" %>
+    <div class="form-group submit_button">
+      <%= f.submit "Comments", class: "btn btn-info" %>
+    </div>
+  <% end %>
+</div>

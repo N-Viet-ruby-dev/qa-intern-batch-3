@@ -11,7 +11,12 @@ Rails.application.routes.draw do
     resources :posts, on: :member
   end
 
+  resources :posts do
+    get "/show-post", to: "posts#show_post_home"
+  end
+
   resources :tags
+  resources :comments, on: :create
 
   namespace :admin do
     root "dashboard#index"

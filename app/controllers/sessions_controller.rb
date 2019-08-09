@@ -33,6 +33,7 @@ class SessionsController < ApplicationController
     else
       forget user
     end
+    user.update_attribute :log_out_at, nil
     redirect_back_or user
   end
 

@@ -16,7 +16,7 @@ class ApplicationController < ActionController::Base
   end
 
   def check_correct_user
-    @user = User.find_by params[:id]
+    @user = User.find_by id: params[:user_id]
     unless current_user? @user
       redirect_to root_path, danger: "You cannot access this page!"
     end

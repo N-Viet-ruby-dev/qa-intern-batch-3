@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
   def index
-    @posts = Post.all
+    @posts = Post.newest.page(params[:page]).per 10
   end
 end

@@ -1,0 +1,58 @@
+<div class="row body-content-post">
+  <div class="col-md-9">
+    <div id="topic-title">
+      <h3><%= @post.title %></h3>
+      <span class="badge-category-bg" style="background-color: #00B355;"></span>
+      <span class="category-name"><%= @post.category_name %></span>
+    </div>
+    <div class="topic-content">
+      <div class="topic-avatar">
+        <span class="image_circle"><%= image_tag load_avatar @post.user_avatar %></span>
+        <span><%= @post.user_user_name %></span>
+        <span class="time-post"><%= check_time_post @post.created_at %></span>
+      </div>
+      <div class="topic-body clearfix">
+        <div class="regular contents">
+          <p><%= raw @post.content %></p>
+        </div>
+        <div class="topic-map">
+          <table class="table table-hover table-striped">
+            <thead>
+              <th class="topic-map-cols">
+                created</br>
+                <%= link_to "#" do %>
+                  <%= image_tag load_avatar(@post.user_avatar), class: "image-small" %>
+                <% end %><%= check_time_post @post.created_at %>
+              </th>
+              <th class="topic-cols">
+                <%= link_to "last reply", "#" %>
+              </th>
+              <th class="topic-map-cols">
+                5<br>
+                <span>replies</span>
+              </th>
+              <th class="topic-map-cols">
+                <%= @post.view %></br>
+                <span>views</span>
+              </th>
+              <th class="topic-map-cols">
+                5<br>
+                <span>users</span>
+              </th>
+              <th class="topic-map-cols">
+                5<br>
+                <span>likes</span>
+              </th>
+              <th>avatar</th>
+            </thead>
+          </table>
+        </div>
+        <div class="topic-comment row">
+          <%= render partial: "comment", collection: @comments %>
+        </div>
+      </div>
+      <%= render "new_comment" %>
+    </div>
+  </div>
+  <div class="col-md-3"></div>
+</div>

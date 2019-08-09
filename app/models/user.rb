@@ -66,6 +66,10 @@ class User < ApplicationRecord
     reset_sent_at < 2.hours.ago
   end
 
+  def update_log_out_at
+    update_attribute :log_out_at, Time.now
+  end
+
   private
 
   def downcase_email

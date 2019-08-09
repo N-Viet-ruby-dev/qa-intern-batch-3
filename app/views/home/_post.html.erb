@@ -1,10 +1,23 @@
 <tr>
   <td>
-    <%= post.title %></br>
-    <span><%= post.category_name %></span>
+    <span class="link-top-line">
+      <%= link_to post.title, post_show_post_path(post) %>
+    </span></br>
+    <%= link_to "#" do %>
+      <span class="badge-category-bg" style="background-color: #00B355;"></span>
+      <span class="category-name"><%= post.category_name %></span>
+    <% end %>
   </td>
-  <td><%= post.user_full_name %></td>
+  <td>
+    <%= image_tag load_avatar(post.user_avatar), class: "image_circle" %>
+  </td>
   <td></td>
-  <td></td>
-  <td></td>
+  <td><%= post.view %></td>
+  <td>
+    <% if post.user_log_out_at.present? %>
+      <%= format_time post.user_log_out_at %>
+    <% else %>
+      <span class="badge-activity" style="background-color: #00B355;"></span>
+    <% end %>
+  </td>
 </tr>

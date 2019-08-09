@@ -127,7 +127,7 @@ hr {
 /* Change styles for cancel button and signup button on extra small screens */
 @media screen and (max-width: 300px) {
   .signupbtn {
-   width: 100%;
+  width: 100%;
  }
 }
 
@@ -217,10 +217,156 @@ span.psw {
 }
 
 /*form posts*/
-label{
+.control-label{
   color: black;
   font-weight: bold;
 }
 .ck.ck-content {
   height: 250px;
+}
+
+/**background span categories**/
+.badge-category-bg {
+  flex: 0 0 auto;
+  width: 9px;
+  height: 9px;
+  margin-right: 5px;
+  display: inline-block;
+}
+
+/**show post**/
+.link-top-line>a{
+  font-size: 20px;
+  color: black;
+}
+.link-top-line>a:hover {
+  text-decoration: none;
+}
+span.category-name:hover {
+  text-decoration: none;
+}
+span.category-name {
+  color: black;
+  font-weight: bold;
+  font-size: 15px;
+}
+.badge-activity {
+  -webkit-box-flex: 0;
+  flex: 0 0 auto;
+  width: 9px;
+  height: 9px;
+  margin-right: 5px;
+  display: inline-block;
+  border-radius: 10px;
+}
+img.image-small {
+  width: 30px;
+  height: 30px;
+  border-radius: 20px;
+}
+.topic-map-cols {
+  color: #808080;
+}
+.topic-cols>a{
+  color: #808080;
+}
+.topic-cols>a:hover {
+  text-decoration: none;
+  color: #808080;
+}
+.topic-comment-rigth {
+  background: #DC143C;
+  border-radius: 20px;
+  color: #F8F8FF;
+  margin-bottom: 10px;
+}
+.image-comment {
+  float: right;
+}
+.row {
+  margin-right: 0px!important;
+}
+.topic-comment {
+  margin-top: 10px;
+}
+.topic-avatar {
+  margin-bottom: 10px;
+}
+
+/******Main content show post*******/
+main.container {
+  margin-top: 20px;
+  background: #FFF8DC;
+}
+.regular.contents {
+  background: #AFEEEE;
+  border-bottom: 1px solid #696969;
+}
+.regular.contents>p {
+  padding: 10px 10px;
+}
+.image_circle img {
+  width: 70px;
+  height: 70px;
+  border-radius: 20px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+img.image_circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+}
+#topic-title {
+  border-bottom: 1px solid #696969;
+}
+.time-post {
+  margin-left: 65%;
+  color: #2F4F4F;
+}
+.topic-map {
+  padding: 10px;
+}
+.submit_button {
+  padding: 10px;
+}
+
+/****Paginate kaminari***/
+.pagination a, .pagination span.current, .pagination span.gap {
+  float: left;
+  padding: 0 14px;
+  line-height: 38px;
+  text-decoration: none;
+  background-color: white;
+  border: 1px solid #DDD;
+  border-left-width: 0;
+}
+
+.pagination {
+  border-left: 1px solid #ddd;
+  .first{
+    padding : 0;
+    float: none;
+    border: none;
+  }
+  .prev {
+    padding : 0;
+    float: none;
+    border: none;
+  }
+  .page{
+    padding : 0;
+    float: none;
+    border: none;
+  }
+  .next{
+    padding : 0;
+    float: none;
+    border: none;
+  }
+  .last{
+    padding : 0;
+    float: none;
+    border: none;
+  }
 }
