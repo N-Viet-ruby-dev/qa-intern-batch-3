@@ -1,9 +1,7 @@
-<!--Navigation Bar-->
 <nav class="navbar navbar-light bg-light d-flex header">
   <div class="logo">
     <a class="navbar-brand" href="/">
-      <%= fa_stacked_icon "apple inverse", base: "circle"%>
-      Avengers
+      <%= fa_stacked_icon "apple inverse", base: "circle"%> Avengers
     </a>
   </div>
   <div class="m-auto">
@@ -13,22 +11,23 @@
     </form>
   </div>
   <% if logged_in? %>
-    <div class="dropdown">
+    <div class="dropdown" id="dropdown-m">
       <span href="#" class="dropdown-toggle" data-toggle="dropdown">
         <% if current_user.avatar.attached? %>
-          <%= image_tag current_user.avatar, class: "avatar-users" %>
+        <%= image_tag current_user.avatar, class: "avatar-users" %>
         <% else %>
-          <%= image_tag "login.png", class: "avatar-users" %>
+        <%= image_tag "login.png", class: "avatar-users" %>
         <% end %>
         <%= current_user.full_name %>
-        <span class="caret"></span></button>
+        <span class="caret"></span>
       </span>
       <ul class="dropdown-menu">
         <li><%= link_to "Admin Tool", admin_root_path %></li>
-        <li><%= link_to "Edit profile", edit_user_path(current_user), remote: true %></li>
+        <li><%= link_to "Profile", current_user %></li>
+        <li><%= link_to "Settings", edit_user_path(current_user), remote: true %></li>
         <li class="divider"></li>
         <li>
-          <%= link_to "Logout", logout_path, method: :delete %>
+          <%= link_to "Log out", logout_path, method: :delete %>
         </li>
       </ul>
     </div>
@@ -36,12 +35,11 @@
     <div class="user-section">
       <ul>
         <li><i class="fa fa-heart"></i></li>
-          <li data-toggle="modal" data-target="#login-signup">
-            <i class="fa fa-sign-in"></i>
-          </li>
+        <li data-toggle="modal" data-target="#login-signup">
+          <i class="fa fa-sign-in"></i>
+        </li>
       </ul>
     </div>
-
     <div id="login-signup" class="modal fade" role="dialog">
       <div class="modal-dialog">
         <!-- Modal content-->
@@ -49,7 +47,8 @@
           <div class="modal-body">
             <ul class="navbar nav nav-tabs">
               <li class="active">
-                <%= link_to "#home", class: "btn btn-outline-primary active", data: {toggle: "tab"} do %>
+                <%= link_to "#home", class: "btn btn-outline-primary active",
+                  data: {toggle: "tab"} do %>
                   Login
                 <% end %>
               </li>

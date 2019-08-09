@@ -1,2 +1,19 @@
-<h1>Users#index</h1>
-<p>Find me in app/views/users/index.html.erb</p>
+<input type="" name="" id="myInput" placeholder="search ...">
+<div id="table-user">
+  <div id="bloguser-table">
+    <table id="myTable" class="table table-striped">
+      <thead class="thead-default">
+        <tr>
+          <th scope="col" id="show-length"><%= User.count %> Users</th>
+          <th scope="col">Posts</th>
+          <th scope="col">Likes</th>
+          <th scope="col">Replies</th>
+        </tr>
+      </thead>
+      <tbody id="myUL">
+        <%= render @users %>
+      </tbody>
+    </table>
+  </div>
+</div>
+<div id="no-result" style="text-align: center;"></div>

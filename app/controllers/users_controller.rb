@@ -1,9 +1,17 @@
 class UsersController < ApplicationController
+  before_action :load_user, only: %i(show edit update)
   before_action :logged_in_user, only: %i(index edit update)
   before_action :correct_user, only: %i(update edit)
 
   def index
     @users = User.all
+    respond_to do |format|
+      format.html
+      format.js
+    end
+  end
+
+  def show
   end
 
   def new
@@ -42,6 +50,12 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit :email, :full_name, :user_name, :role,
     :password, :password_confirmation, :avatar
+  end
+
+  def load_user
+    @user = User.find_by id: params[:id]
+    return if @user
+    redirect_to root_path, danger: "not found"
   end
 
   def correct_user
