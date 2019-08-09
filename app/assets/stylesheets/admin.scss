@@ -2,8 +2,6 @@
 @import "font-awesome";
 @import "admin/datatable";
 @import "toastr";
-@import "jquery-ui";
-@import "select2";
 
 @keyframes swing {
   0% {
@@ -551,14 +549,12 @@ input#user_avatar {
   margin: 14px 0 0px 15px;
   padding: 11px;
 }
-
 #btn-close {
   width: 99%;
   margin: 0px 0px 0px 1px;
   padding: 9px;
   color: black;
 }
-
 #btn-default {
   width: 14%;
   margin-left: 2%;
@@ -569,7 +565,6 @@ input#user_avatar {
   width: 80px;
   color: black;
 }
-
 .data-user td{
   text-align: center;
 }
@@ -595,29 +590,8 @@ input#user_avatar {
   margin-top: 10px;
 }
 
-.avatar-signup{
-  height: 90px;
-  width: 90px;
-  border-radius: 50%;
-}
-
-.custom-admin{
-  width: 100%;
-  margin: 14px 0px 4px 0px;
-}
-
-.custom-admin-close{
-  padding: 9px;
-  background-color: red;
-}
-
-#img{
-  padding: 3px;
-}
-
-/*----------------------------- Form admin create -------------------------------------------------*/
+// form create admin post
 .custom-new-post {
   width: 15%;
   float: right;
 }
-/*----------------------------- end -------------------------------------------------*/

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount Ckeditor::Engine => '/ckeditor'
   get 'password_resets/new'
   get 'password_resets/edit'
   root "home#index"
@@ -18,6 +19,7 @@ Rails.application.routes.draw do
     resources :categories, except: :show
     resources :users, except: [:edit, :show]
     resources :tags
+    resources :posts
   end
 
   resources :account_activations, only: [:edit]

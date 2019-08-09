@@ -1,0 +1,9 @@
+<tr id="post_<%= post.id %>">
+  <td><%= post.title %></td>
+  <td><%= raw post.content %></td>
+  <td><%= post.comments.count %></td>
+  <td id="active-post<%= post.id %>"><%= post.actived %></td>
+  <td><%= link_to_set_post(post) %></td>
+  <td><%= link_to "Destroy", admin_post_path(post), method: :delete, remote: true, data: { confirm: "Are you sure?" }, class: "btn btn-danger" %></td>
+</tr>
+

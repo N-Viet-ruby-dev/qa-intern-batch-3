@@ -1,0 +1,5 @@
+<%if @post.errors.present? %>
+  $("#errors-post").html('<%= j render "shared/error_messages", object: @post %>')
+<% else %>
+  location.reload();
+<% end %>
